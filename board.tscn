@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0qyk6v20uief"]
+
+[ext_resource type="Script" path="res://Generator.gd" id="1_ckrtr"]
+[ext_resource type="Script" path="res://Game.gd" id="1_f1l42"]
+
+[node name="Board" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_f1l42")
+
+[node name="Flow" type="FlowContainer" parent="."]
+layout_mode = 0
+script = ExtResource("1_ckrtr")
+
+[connection signal="send_location" from="Flow" to="." method="_on_flow_send_location"]
